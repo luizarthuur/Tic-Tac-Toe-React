@@ -7,8 +7,11 @@ function App() {
   const [gameTurns, setGameTurns] = useState([]);
   const [activePlayer, setActivePlayer] = useState('X')
 
-  function handleSelectSquare() {
+  function handleSelectSquare(rowIndex, colIndex) {
     setActivePlayer((currActivePlayer) => currActivePlayer === 'X' ? 'O' : 'X')
+    setGameTurns(prevTurns => {
+      let updatedTurns = [{ square: {row: rowIndex, col: colIndex}, player:  },...prevTurns]
+    })
   }
   
   return (
